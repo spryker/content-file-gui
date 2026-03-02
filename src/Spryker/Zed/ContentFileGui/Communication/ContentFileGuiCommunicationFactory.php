@@ -26,11 +26,6 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class ContentFileGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @param string|null $identifierSuffix
-     *
-     * @return \Spryker\Zed\ContentFileGui\Communication\Table\ContentFileListViewTable
-     */
     public function createContentFileListViewTable(?string $identifierSuffix = null): ContentFileListViewTable
     {
         return new ContentFileListViewTable(
@@ -56,57 +51,36 @@ class ContentFileGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Communication\Mapper\ContentFileGuiEditorConfigurationMapperInterface
-     */
     public function createContentFileGuiEditorConfigurationMapper(): ContentFileGuiEditorConfigurationMapperInterface
     {
         return new ContentFileGuiEditorConfigurationMapper($this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Communication\Form\Constraints\ContentFileListConstraint
-     */
     public function createContentFileListConstraint(): ContentFileListConstraint
     {
         return new ContentFileListConstraint($this->getContentFileFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Communication\Mapper\ContentFileListGuiFormDataMapperInterface
-     */
     public function createContentFileListGuiFormDataMapper(): ContentFileListGuiFormDataMapperInterface
     {
         return new ContentFileListGuiFormDataMapper();
     }
 
-    /**
-     * @return \Orm\Zed\FileManager\Persistence\SpyFileQuery
-     */
     public function getFileQueryContainer(): SpyFileQuery
     {
         return $this->getProvidedDependency(ContentFileGuiDependencyProvider::PROPEL_QUERY_FILE);
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Dependency\Facade\ContentFileGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): ContentFileGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ContentFileGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Dependency\Facade\ContentFileGuiToContentFileFacadeInterface
-     */
     public function getContentFileFacade(): ContentFileGuiToContentFileFacadeInterface
     {
         return $this->getProvidedDependency(ContentFileGuiDependencyProvider::FACADE_CONTENT_FILE);
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Dependency\Facade\ContentFileGuiToFileManagerFacadeInterface
-     */
     public function getFileManagerFacade(): ContentFileGuiToFileManagerFacadeInterface
     {
         return $this->getProvidedDependency(ContentFileGuiDependencyProvider::FACADE_FILE_MANAGER);

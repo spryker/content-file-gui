@@ -17,9 +17,6 @@ class ContentFileGuiEditorConfigurationMapper implements ContentFileGuiEditorCon
      */
     protected $contentFileGuiConfig;
 
-    /**
-     * @param \Spryker\Zed\ContentFileGui\ContentFileGuiConfig $contentFileGuiConfig
-     */
     public function __construct(ContentFileGuiConfig $contentFileGuiConfig)
     {
         $this->contentFileGuiConfig = $contentFileGuiConfig;
@@ -41,9 +38,6 @@ class ContentFileGuiEditorConfigurationMapper implements ContentFileGuiEditorCon
         return $templates;
     }
 
-    /**
-     * @return string
-     */
     public function getTwigFunctionTemplate(): string
     {
         return '{{ ' . $this->contentFileGuiConfig->getTwigFunctionName() . "('%KEY%', '%TEMPLATE%') }}";

@@ -39,11 +39,6 @@ class ContentFileGuiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PROPEL_QUERY_FILE = 'PROPEL_QUERY_FILE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $this->addFileQueryContainer($container);
@@ -54,11 +49,6 @@ class ContentFileGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return void
-     */
     protected function addFileQueryContainer(Container $container): void
     {
         $container->set(static::PROPEL_QUERY_FILE, $container->factory(function () {
@@ -66,11 +56,6 @@ class ContentFileGuiDependencyProvider extends AbstractBundleDependencyProvider
         }));
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return void
-     */
     protected function addLocaleFacade(Container $container): void
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -78,11 +63,6 @@ class ContentFileGuiDependencyProvider extends AbstractBundleDependencyProvider
         });
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return void
-     */
     protected function addContentFileFacade(Container $container): void
     {
         $container->set(static::FACADE_CONTENT_FILE, function (Container $container) {
@@ -90,11 +70,6 @@ class ContentFileGuiDependencyProvider extends AbstractBundleDependencyProvider
         });
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return void
-     */
     protected function addFileManagerFacade(Container $container): void
     {
         $container->set(static::FACADE_FILE_MANAGER, function (Container $container) {

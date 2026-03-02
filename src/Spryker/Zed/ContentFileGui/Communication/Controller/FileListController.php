@@ -21,11 +21,6 @@ class FileListController extends AbstractController
      */
     public const PARAM_FILE_IDS = 'ids';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function fileListSelectedTableAction(Request $request): JsonResponse
     {
         return $this->jsonResponse(
@@ -33,11 +28,6 @@ class FileListController extends AbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function fileListViewTableAction(Request $request): JsonResponse
     {
         return $this->jsonResponse(

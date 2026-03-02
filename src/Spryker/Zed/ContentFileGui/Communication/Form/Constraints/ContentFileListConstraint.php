@@ -28,9 +28,6 @@ class ContentFileListConstraint extends SymfonyConstraint
         parent::__construct($options);
     }
 
-    /**
-     * @return \Spryker\Zed\ContentFileGui\Dependency\Facade\ContentFileGuiToContentFileFacadeInterface
-     */
     public function getContentFileFacade(): ContentFileGuiToContentFileFacadeInterface
     {
         return $this->contentFileFacade;

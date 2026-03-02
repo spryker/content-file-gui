@@ -39,11 +39,6 @@ class FileListContentTermForm extends AbstractType
      */
     protected const TEMPLATE_PATH = '@ContentFileGui/FileList/file_list.twig';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -90,9 +85,6 @@ class FileListContentTermForm extends AbstractType
         $view->vars['attr']['template_path'] = static::TEMPLATE_PATH;
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'file-list';

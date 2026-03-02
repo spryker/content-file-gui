@@ -48,11 +48,6 @@ class ContentFileListConstraintValidator extends ConstraintValidator
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentParameterMessageTransfer $parameterMessageTransfer
-     *
-     * @return void
-     */
     protected function addViolations(ContentParameterMessageTransfer $parameterMessageTransfer): void
     {
         foreach ($parameterMessageTransfer->getMessages() as $messageTransfer) {

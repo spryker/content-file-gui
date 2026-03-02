@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ContentValidationResponseTransfer;
 
 interface ContentFileGuiToContentFileFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ContentFileListTermTransfer $contentFileListTermTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentValidationResponseTransfer
-     */
     public function validateContentFileListTerm(
         ContentFileListTermTransfer $contentFileListTermTransfer
     ): ContentValidationResponseTransfer;

@@ -25,11 +25,6 @@ class ContentFileGuiToContentFileFacadeBridge implements ContentFileGuiToContent
         $this->contentFileFacade = $contentFileFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentFileListTermTransfer $contentFileListTermTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentValidationResponseTransfer
-     */
     public function validateContentFileListTerm(
         ContentFileListTermTransfer $contentFileListTermTransfer
     ): ContentValidationResponseTransfer {

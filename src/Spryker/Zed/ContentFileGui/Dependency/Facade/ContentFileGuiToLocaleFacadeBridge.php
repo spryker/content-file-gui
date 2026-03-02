@@ -24,9 +24,6 @@ class ContentFileGuiToLocaleFacadeBridge implements ContentFileGuiToLocaleFacade
         $this->localeFacade = $localeFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getCurrentLocale(): LocaleTransfer
     {
         return $this->localeFacade->getCurrentLocale();

@@ -101,11 +101,6 @@ class ContentFileListSelectedTable extends AbstractTable
         $this->identifierSuffix = $identifierSuffix;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $parameters = [];
@@ -139,9 +134,6 @@ class ContentFileListSelectedTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function newTableConfiguration(): TableConfiguration
     {
         $tableConfiguration = parent::newTableConfiguration();
@@ -183,11 +175,6 @@ class ContentFileListSelectedTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFile $fileEntity
-     *
-     * @return array
-     */
     protected function formatRow(SpyFile $fileEntity): array
     {
         $idFile = $fileEntity->getIdFile();
@@ -199,11 +186,6 @@ class ContentFileListSelectedTable extends AbstractTable
         ];
     }
 
-    /**
-     * @param int $idFile
-     *
-     * @return string
-     */
     protected function getActionButtons(int $idFile): string
     {
         $actionButtons = [];

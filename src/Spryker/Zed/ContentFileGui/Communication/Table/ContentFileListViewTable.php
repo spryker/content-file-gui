@@ -77,11 +77,6 @@ class ContentFileListViewTable extends AbstractTable
      */
     protected $identifierSuffix;
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFileQuery $fileQueryContainer
-     * @param \Generated\Shared\Transfer\LocaleTransfer $localeTransfer
-     * @param string|null $identifierSuffix
-     */
     public function __construct(
         SpyFileQuery $fileQueryContainer,
         LocaleTransfer $localeTransfer,
@@ -92,11 +87,6 @@ class ContentFileListViewTable extends AbstractTable
         $this->identifierSuffix = $identifierSuffix;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->baseUrl = static::BASE_URL;
@@ -147,11 +137,6 @@ class ContentFileListViewTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFile $fileEntity
-     *
-     * @return array
-     */
     protected function formatRow(SpyFile $fileEntity): array
     {
         $idFile = $fileEntity->getIdFile();
@@ -163,11 +148,6 @@ class ContentFileListViewTable extends AbstractTable
         ];
     }
 
-    /**
-     * @param int $idFile
-     *
-     * @return string
-     */
     public function getAddButtonField(int $idFile): string
     {
         return $this->generateButton(
